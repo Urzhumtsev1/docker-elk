@@ -28,7 +28,18 @@ metricbeat.modules:
   period: 10s
   enabled: true
 
+setup:
+  kibana:
+    host: "kibana:5601"
+    protocol: "http"
+    ssl.enabled: false
+    username: elastic
+    password: changeme
+  dashboards.enabled: true
+
 processors:
+  - add_host_metadata: ~
+  - add_docker_metadata: ~
   - add_cloud_metadata: ~
 
 output.elasticsearch:
