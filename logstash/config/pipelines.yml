@@ -1,8 +1,8 @@
 - pipeline.id: logstash
   path.config: "/usr/share/logstash/pipeline/logstash.conf"
-  queue.type: memory
-- pipeline.id: persisted
-  path.config: "/usr/share/logstash/pipeline/app_1.conf"
+  queue.type: persisted
+- pipeline.id: record
+  path.config: "/usr/share/logstash/pipeline/record.conf"
   queue.type: persisted
 #- pipeline.id: second_pipeline
 #  path.config: "/usr/share/logstash/pipeline/second.conf"

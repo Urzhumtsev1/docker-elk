@@ -28,6 +28,15 @@ metricbeat.modules:
   period: 10s
   enabled: true
 
+- module: rabbitmq
+  metricsets: ["node", "queue", "connection"]
+  enabled: true
+  period: 10s
+  hosts: ["http://core-s-medwb01.gk.rosatom.local:15672"]
+  username: ml_user
+  password: XQc6hLNe
+  management_path_prefix: rabbit/
+
 setup:
   kibana:
     host: "kibana:5601"
